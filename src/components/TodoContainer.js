@@ -6,23 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export class TodoContainer extends Component {
   state = {
-    todos: [
-      {
-        id: uuidv4(),
-        title: "Setup development environment",
-        completed: true,
-      },
-      {
-        id: uuidv4(),
-        title: "Develop website and add content",
-        completed: false,
-      },
-      {
-        id: uuidv4(),
-        title: "Deploy to live server",
-        completed: false,
-      },
-    ],
+    todos: [],
   };
 
   handleChange = (id) => {
@@ -60,6 +44,23 @@ export class TodoContainer extends Component {
     });
   };
 
+  setUpdate = (updatedTitle, id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.title = updatedTitle;
+        }
+        return todo;
+      }),
+    });
+  };
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .then((response) => response.json())
+      .then((data) => this.setState({ todos: data }));
+  }
+
   render() {
     return (
       <div className="container">
@@ -70,6 +71,7 @@ export class TodoContainer extends Component {
             todos={this.state.todos}
             handleChangeProps={this.handleChange}
             deleteTodoProps={this.delTodo}
+            setUpdate={this.setUpdate}
           />
         </div>
       </div>
