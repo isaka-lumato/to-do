@@ -14,7 +14,7 @@ Additional description about the project and its features.
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
-- Copy this link https://github.com/isaka-lumato/react-app
+- Copy this link https://github.com/isaka-lumato/to-do
 - Open your terminal or command line
 - Run git clone and paste the link
 - Open the folder with your code editor
@@ -33,7 +33,8 @@ To get a local copy up and running follow these simple example steps:
 
 ## Live Demo
 
- [Live Demo Link](https://isaka-lumato.github.io/react-app/)
+ [Live Demo Link](https://isaka-lumato.github.io/to-do/
+)
 
 ## Author
 
@@ -45,7 +46,7 @@ To get a local copy up and running follow these simple example steps:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/isaka-lumato/react-app/issues).
+Feel free to check the [issues page](https://github.com/isaka-lumato/to-do/issues).
 
 ## Show your support
 
