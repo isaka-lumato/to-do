@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
-import styles from "./TodoItem.module.css";
 import { FaTrash } from "react-icons/fa";
+import styles from "./TodoItem.module.css";
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
@@ -24,8 +25,8 @@ const TodoItem = (props) => {
 
   const { completed, id, title } = props.todo;
 
-  let viewMode = {};
-  let editMode = {};
+  const viewMode = {};
+  const editMode = {};
 
   if (editing) {
     viewMode.display = "none";
@@ -33,11 +34,12 @@ const TodoItem = (props) => {
     editMode.display = "none";
   }
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       console.log("Cleaning up...");
-    };
-  }, []);
+    },
+    []
+  );
 
   return (
     <li className={styles.item}>

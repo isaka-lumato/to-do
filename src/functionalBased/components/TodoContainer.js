@@ -1,15 +1,16 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import About from "../pages/About";
 import NotMatch from "../pages/NotMatch";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import InputTodo from "./InputTodo";
 import TodosList from "./TodosList";
-import { v4 as uuidv4 } from "uuid";
 
 const TodoContainer = () => {
-const [todos, setTodos] = useState(getInitialTodos());
+  const [todos, setTodos] = useState(getInitialTodos());
 
   const handleChange = (id) => {
     setTodos((prevState) =>
@@ -26,17 +27,13 @@ const [todos, setTodos] = useState(getInitialTodos());
   };
 
   const delTodo = (id) => {
-    setTodos([
-      ...todos.filter((todo) => {
-        return todo.id !== id;
-      }),
-    ]);
+    setTodos([...todos.filter((todo) => todo.id !== id)]);
   };
 
   const addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
-      title: title,
+      title,
       completed: false,
     };
     setTodos([...todos, newTodo]);
@@ -53,18 +50,18 @@ const [todos, setTodos] = useState(getInitialTodos());
     );
   };
 
-function getInitialTodos() {
-  // getting stored items
-  const temp = localStorage.getItem("todos");
-  const savedTodos = JSON.parse(temp);
-  return savedTodos || [];
-}
+  function getInitialTodos() {
+    // getting stored items
+    const temp = localStorage.getItem("todos");
+    const savedTodos = JSON.parse(temp);
+    return savedTodos || [];
+  }
 
-useEffect(() => {
-  // storing todos items
-  const temp = JSON.stringify(todos);
-  localStorage.setItem("todos", temp);
-}, [todos]);
+  useEffect(() => {
+    // storing todos items
+    const temp = JSON.stringify(todos);
+    localStorage.setItem("todos", temp);
+  }, [todos]);
 
   return (
     <>
@@ -93,7 +90,6 @@ useEffect(() => {
       </switch>
     </>
   );
-  
 };
 
 export default TodoContainer;
