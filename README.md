@@ -2,7 +2,8 @@
 
 >-This is a To-Do list app that allows users to add new tasks, mark completed tasks, edit existing tasks and delete tasks.
 
-![react-router](https://user-images.githubusercontent.com/75973193/135466553-0eef0121-0910-4176-8d67-c21ed50245f9.png)
+![todosSS](https://user-images.githubusercontent.com/75973193/135482129-b2071119-b77a-4f8a-a127-7b176d171a52.png)
+
 
 
 Additional description about the project and its features.
